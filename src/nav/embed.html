@@ -1,0 +1,243 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<style>
+
+body::before, body::after {
+    content: ".";
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+
+.story-timeline {
+    color: #333
+}
+.story-timeline--title {
+    width: 100%;
+    max-width:620px;
+    border-top: 1px solid #E3E3E3;
+    border-bottom: 1px solid #E3E3E3;
+    font-family: "Guardian Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    padding-top: 6px;
+    padding-bottom: 12px;
+    color: #005689
+}
+.story-timeline--title.main {
+    font-family: "Guardian Egyptian Web", Georgia, serif;
+   
+    font-size: 20px
+}
+.story-timeline--title.first {
+    opacity: .4;
+    height: 15px;
+    padding-top: 6px;
+    padding-bottom: 12px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    display: block;
+    border-top: 0;
+    color: #797979
+}
+
+.story-timeline--item.last {
+    border:none;
+    opacity: .5;
+    font-weight: 800
+    color: #797979
+}
+
+.story-timeline--wrapper {
+    /*font-family: "Guardian Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
+    font-family: "Guardian Egyptian Text Web",Georgia,serif;
+    color:#999;
+    font-size:14px;
+    width: 100%;
+    max-width:620px;
+    height:120px;  
+}
+
+.story-timeline--container {
+        overflow-x: scroll;  
+}
+
+.story-timeline--container ul{
+   height: 108px;
+}
+
+
+
+.story-timeline--list {
+    list-style: none;
+    padding: 0 3px;
+    margin: 0;
+    position: relative;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out
+}
+
+.story-timeline--list a {
+    text-decoration: none;
+    color: inherit
+}
+
+.story-timeline--list a:first-of-type li {
+    /*margin-top: 6px*/
+}
+
+.story-timeline--list a:last-child li {
+    margin-bottom: 0
+}
+
+
+
+.story-timeline--item {
+    display:inline-block;
+ 
+   float:left;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 12px 10px 12px 0;
+    padding-right:10px;
+    width:168px;
+    height: 84px;
+
+    font-family: "Guardian Egyptian Web",Georgia,serif;
+    color:#999;
+
+    border-right: 1px dotted rgba(0, 86, 137, 0.2);
+}
+
+
+
+.story-timeline--item.unpublished .story-timeline--kicker {
+    color: #989898
+}
+
+.story-timeline--item.unpublished {
+    opacity: 50%;
+}
+
+.story-timeline--kicker {
+   
+    font-family: "Guardian Egyptian Web", Georgia, serif;
+    color: #005689;
+}
+
+.story-timeline--divide {
+    color: #E3E3E3
+}
+
+.story-timeline--circle {
+    width: 10px;
+    height: 10px;
+    background-color: #005689;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 80px;
+}
+
+.story-timeline--circle.unpublished {
+    width: 9px;
+    height: 9px;
+    border: 1px solid #005689;
+    background-color: #fff
+}
+
+.left-button,
+.right-button {
+    border-radius: 50%;
+    border: 1px solid #005689;
+    height: 15px;
+    width: 15px;
+    padding-top: 3px;
+    padding-left: 3px;
+    float: right;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    cursor: pointer
+}
+
+.left-button:hover,
+.right-button:hover {
+    background-color: #005689
+}
+
+.left-button:hover svg polygon,
+.right-button:hover svg polygon {
+    fill: #fff
+}
+
+.left-button svg,
+.right-button svg {
+    width: 12px;
+    height: 12px
+}
+
+
+
+</style>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/gdn-cdn/embed/webwewant/www-gu-type.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="js/handlebars.js"></script>
+<script src="js/main.js"></script>
+<script src="https://interactive.guim.co.uk/libs/iframe-messenger/iframeMessenger.js"></script>
+<script>
+    iframeMessenger.enableAutoResize();
+</script>
+<div class="story-timeline--title main">
+  The road to Liverpool
+</div>
+<div class="story-timeline--wrapper">
+  <!-- <div class="story-timeline--title first">
+    back to top
+    <div class="left-button">
+      <svg width="20px" height="19px" viewBox="8 9 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <polygon id="" stroke="none" fill="#005689" fill-rule="evenodd" transform="translate(18.217011, 18.636389) scale(-1, 1) translate(-18.217011, -18.636389) " points="19.1067803 9.67732843 27.6362966 18.2272993 27.6362966 19.0454783 19.1067803 27.5954491 18.3090557 26.7977246 24.4453984 19.4545678 8.79772455 19.4545678 8.79772455 17.8182097 24.4453984 17.8182097 18.3090557 10.475053"></polygon>
+      </svg>
+    </div>
+  </div> -->
+  <div class="story-timeline">
+    <script id="data__template" type="text/x-handlebars-template">
+
+      <div class="story-timeline--container">
+        <ul class="story-timeline--list">
+        
+        {{#each Sheet1}}
+           
+              {{#if Link}}<a target="_parent" href="{{Link}}">{{/if}}
+                  <li class="story-timeline--item {{#if Link}} published {{else}} unpublished {{/if}}"  id="listItem-{{ inc @index }}">
+                    <span class="story-timeline--kicker">Part {{inc @index}}</span> <span class="story-timeline--divide">/</span> {{Headline}}
+                  </li>
+              {{#if Link}}</a>{{/if}}
+          {{/each}}
+
+        <li class="story-timeline--item last">
+          
+          <span class="story-timeline--kicker">Final Part</span> <span class="story-timeline--divide">/</span> Labour Party Conference
+        </li>
+        </ul>
+      </div>
+            
+    </script>
+  </div>
+</div>
+</body></html>
+
+
+
+ <!--  <span class="story-timeline--circle"></span>  <span class="story-timeline--circle {{#if Link}} published {{else}} unpublished {{/if}}" id="circle-{{ inc @index }}"></span> 
+<div class="story-timeline--title last">
+          next stories
+          <div class="right-button">
+            <svg width="20px" height="19px" viewBox="8 9 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <polygon id="" stroke="none" fill="#005689" fill-rule="evenodd" points="19.1067803 9.67732843 27.6362966 18.2272993 27.6362966 19.0454783 19.1067803 27.5954491 18.3090557 26.7977246 24.4453984 19.4545678 8.79772455 19.4545678 8.79772455 17.8182097 24.4453984 17.8182097 18.3090557 10.475053"></polygon>
+            </svg>
+          </div>
+        </div>  -->

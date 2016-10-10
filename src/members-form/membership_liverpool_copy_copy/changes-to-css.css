@@ -1,0 +1,43 @@
+
+/* opening para */
+
+.membership-interactive__content p:first-child, .membership-interactive__content p:nth-child(2) {
+    font-family: "Guardian Egyptian Web",Georgia,serif;
+    font-weight: 200;
+    color: #6fa19a;
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 24px;
+}
+
+
+/* drop caps */
+.membership-interactive__content .drop {
+    color: #6fa19a;
+    font-size: 44px;
+    line-height: 48px;
+    padding-right: 6px;
+    font-family: "Guardian Egyptian Web",Georgia,serif;
+    font-weight: 200;
+    float: left;
+}
+
+
+/* bottom form */ 
+.membership-interactive__footer-left {
+    float: left;
+    height: 0px;
+    position: relative;
+    z-index: 30;
+    margin-top: 60px; /* tweaked this to move away from shapes *//* form (fsBody) margin-top: 24px; */
+    overflow: visible;
+}
+
+.membership-interactive__illo img {
+    width: 100%;
+    display: block;
+    margin-top: 55px;
+    margin-left: -18px;
+    z-index: 10;
+    opacity: 0.15; /* tweak opacity */
+}

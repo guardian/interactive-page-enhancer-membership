@@ -112,13 +112,15 @@ figure{
 			display:none;
 		}
 	}
-	p.credit{
+	p .credit{
 		margin:0;
 		span{
 			display:inline-block;
 			margin-top:6px;
 		}
 	}
+
+	
 
 	@media(min-width:480px){
 		h1{
@@ -295,4 +297,29 @@ figure{
 [disabled] .noUi-handle {
 	cursor: not-allowed;
 }
+
+
+
+
+sub{
+		font-size: 24px !important;
+	    line-height: 28px !important;
+	    position: relative !important;
+	    color: #00b0cf !important;
+	    font-family: "Guardian Egyptian Web", Georgia, serif !important;
+}
+
+.element--thumbnail{
+	width: 192px !important;
+}
+
+.video-caption-bubble__svg {
+
+    display: none !important;
+}
+
+.gu-media-wrapper--video {
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+ }
 
